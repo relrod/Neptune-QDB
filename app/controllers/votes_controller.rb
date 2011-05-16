@@ -50,7 +50,10 @@ class VotesController < ApplicationController
     end
 
     @vote.ip_address = request.env['REMOTE_ADDR']
-    @vote.quote_id = params[:quote].to_i
+    @vote.quote_id ||= params[:quote].to_i
+
+    # Delete any previous vote on the same quote, from the same IP
+    Vote.destroy_all({:ip_address => @vote.ip_address, :quote_id => @vote.quote_id})
 
     respond_to do |format|
       if @vote.save
