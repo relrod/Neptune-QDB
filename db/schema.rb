@@ -10,10 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110516181614) do
+ActiveRecord::Schema.define(:version => 20110516184941) do
 
   create_table "quotes", :force => true do |t|
     t.text     "quote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.string   "ip_address"
+    t.string   "direction"
+    t.integer  "quote_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
