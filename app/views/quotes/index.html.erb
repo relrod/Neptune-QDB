@@ -1,22 +1,15 @@
 <h1>Listing quotes</h1>
 
-<table border=1>
-  <tr>
-    <th>Quote</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @quotes.each do |quote| %>
-  <tr>
-    <td><%= simple_format h quote.quote %></td>
-    <td><%= link_to 'Show', quote %></td>
-    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-    <td><%= link_to 'Destroy', quote, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="quote">
+    <div class="header">
+      <%= link_to image_tag('upboat.png'), shortvote_path({:direction => 'up', :quote => quote.id}) %>
+    </div>
+    <div class="main">
+      <%= simple_format h quote.quote %>
+    </div>
+  </div>
 <% end %>
-</table>
 
 <br />
 

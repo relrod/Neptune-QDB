@@ -1,0 +1,22 @@
+body {
+    background-color: #eeeeee;
+    text-align: center;
+    font-family: helvetica, sans-serif;
+}
+
+.quote {
+    border: 2px solid #cccccc;
+    margin: 0 auto;
+    text-align: left;
+    width: 900px;
+    margin-bottom: 20px;
+}
+
+.quote .header {
+    border-bottom: 1px solid #cccccc;
+
+}
+
+.quote .main {
+    padding: 10px;
+}
