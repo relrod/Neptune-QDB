@@ -1,9 +1,11 @@
 class QuotesController < ApplicationController
+  # before_filter :connect_irc, :only => [:create]
+
   # GET /quotes
   # GET /quotes.xml
   def index
     @quotes = Quote.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @quotes }
@@ -44,6 +46,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
+        #log "Quote created: #{@quote.id}"
         format.html { redirect_to(@quote, :notice => 'Quote was successfully created.') }
         format.xml  { render :xml => @quote, :status => :created, :location => @quote }
       else
