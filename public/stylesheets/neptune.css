@@ -19,4 +19,7 @@ body {
 
 .quote .main {
     padding: 10px;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace;
+    font-size: small;
+    word-wrap: break-word;
 }
