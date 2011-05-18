@@ -1,16 +1,39 @@
 <h1>Listing quotes</h1>
 
-<% @quotes.each do |quote| %>
-  <div class="quote">
+<div id="quotewall">
+<!--  <div class="quote">
     <div class="header">
-      <%= link_to image_tag('upboat.png'), shortvote_path({:direction => 'up', :quote => quote.id}) %>
+      <div class="alleft">
+      </div>
+      <div class="alright">
+      </div>
     </div>
     <div class="main">
-      <%= simple_format h quote.quote %>
+      <%= render 'form' %>
     </div>
-  </div>
-<% end %>
+  </div>-->
+  <% @quotes.each do |quote| %>
+    <div class="quote">
+      <div class="header">
+        <div class="alleft">
+          <%= link_to image_tag('upboat.png'), shortvote_path({:direction => 'up', :quote => quote.id}) %>
+          <%= quote.votes.up.count %>
+          <%= link_to image_tag('downboat.png'), shortvote_path({:direction => 'down', :quote => quote.id}) %>
+          <%= quote.votes.down.count %>
+        </div>
+        <div class="alright">
+          Total Votes: <%= quote.votes.count %>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+      <div class="main">
+        <%= simple_format h quote.quote %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
+<div id="statswall">
+ohi.
+</div>
 <br />
-
-<%= link_to 'New Quote', new_quote_path %>

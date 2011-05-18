@@ -5,6 +5,8 @@ Acmqdb::Application.routes.draw do
 
   match '/vote/:quote/:direction' => 'votes#create', :as => 'shortvote', :quote => /\d+/, :direction => /(?:up|down)/
 
+  root :to => 'quotes#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
