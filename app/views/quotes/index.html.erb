@@ -9,7 +9,6 @@
       </div>
     </div>
     <div class="main">
-      <%= render 'form' %>
     </div>
   </div>-->
   <% @quotes.each do |quote| %>
@@ -33,7 +32,14 @@
   <% end %>
 </div>
 
-<div id="statswall">
-ohi.
+<div id="sbar">
+  <div class="box">
+    <span class="title">QDB Statistics</span>
+    <p>Total quotes: <%= @quotes.count %></p>
+  </div>
+
+  <div class="box">
+    <%= render 'form' %>
+  </div>
 </div>
 <br />

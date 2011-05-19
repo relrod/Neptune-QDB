@@ -26,15 +26,14 @@ body {
 .alright { float: right; text-align: right }
 .alleft { float: left; }
 
+#content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 #quotewall {
     float: left;
     width: 70%;
-    margin-left: 20px;
-}
-
-#statswall {
-    float: left;
-    background-color: #cccccc;
 }
 
 .newquote {
@@ -71,4 +70,17 @@ textarea#quote_quote {
     font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace;
     font-size: small;
     word-wrap: break-word;
+}
+
+#sbar {
+    float: left;
+    margin: 0;
+    margin-left: 15px;
+}
+
+#sbar .box {
+    background-color: #dddddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 20px;
 }
