@@ -29,6 +29,7 @@ body {
 #quotewall {
     float: left;
     width: 70%;
+    margin-left: 20px;
 }
 
 #statswall {
@@ -50,7 +51,6 @@ textarea#quote_quote {
     border-radius: 4px 4px 0px 0px;
     margin: 0 auto;
     text-align: left;
-    width: 900px;
     margin-bottom: 20px;
     background-color: #ffffff;
 }
