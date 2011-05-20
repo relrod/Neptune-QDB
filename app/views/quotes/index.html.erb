@@ -11,6 +11,8 @@
     <div class="main">
     </div>
   </div>-->
+<%= page_entries_info @quotes %>
+<%= will_paginate @quotes %>
   <% @quotes.each do |quote| %>
     <div class="quote">
       <div class="header">
