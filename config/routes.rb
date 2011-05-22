@@ -1,5 +1,5 @@
 Acmqdb::Application.routes.draw do
-  resources :votes
+  resources :votes, :only => [:create, :show]
 
   resources :quotes
 
