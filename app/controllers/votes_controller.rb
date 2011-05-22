@@ -11,7 +11,6 @@ class VotesController < ApplicationController
   end
 
   # POST /votes
-  # POST /votes.xml
   def create
     @vote = Vote.new(params[:vote])
 
@@ -30,11 +29,9 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to(@vote, :notice => 'Vote was successfully created.') }
-        format.xml  { render :xml => @vote, :status => :created, :location => @vote }
+        format.html { redirect_to(vote_path(@vote, :page => params[:page]), :notice => 'Vote was successfully created.') }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @vote.errors, :status => :unprocessable_entity }
+        format.html { redirect_to(@vote.quote, :notice => 'There was an error processing your vote. Please try again.') }
       end
     end
   end

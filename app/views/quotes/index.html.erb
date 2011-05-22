@@ -17,9 +17,9 @@
     <div class="quote">
       <div class="header">
         <div class="alleft">
-          <%= link_to image_tag('upboat.png'), shortvote_path({:direction => 'up', :quote => quote.id}) %>
+          <%= link_to image_tag('upboat.png'), shortvote_path({:direction => 'up', :quote => quote.id, :page => params[:page]}) %>
           <%= quote.votes.up.count %>
-          <%= link_to image_tag('downboat.png'), shortvote_path({:direction => 'down', :quote => quote.id}) %>
+          <%= link_to image_tag('downboat.png'), shortvote_path({:direction => 'down', :quote => quote.id, :page => params[:page]}) %>
           <%= quote.votes.down.count %>
         </div>
         <div class="alright">
