@@ -1,7 +1,7 @@
 Acmqdb::Application.routes.draw do
   resources :votes, :only => [:create, :show]
 
-  resources :quotes
+  resources :quotes, :only => [:create, :show]
 
   match '/vote/:quote/:direction' => 'votes#create', :as => 'shortvote', :quote => /\d+/, :direction => /(?:up|down)/
 
