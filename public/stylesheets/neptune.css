@@ -33,8 +33,8 @@ body {
 }
 
 #quotewall {
-    float: left;
     width: 70%;
+    margin: 0 auto;
 }
 
 .newquote {
@@ -84,4 +84,11 @@ textarea#quote_quote {
     border-radius: 4px;
     margin-bottom: 20px;
     padding: 20px;
+}
+
+#footer {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
