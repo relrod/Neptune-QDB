@@ -1,19 +1,16 @@
-<h1>Listing quotes</h1>
-
 <div id="quotewall">
-<!--  <div class="quote">
-    <div class="header">
-      <div class="alleft">
-      </div>
-      <div class="alright">
-      </div>
-    </div>
-    <div class="main">
-    </div>
+  <!--  <div class="quote">
+        <div class="header">
+          <div class="alleft">
+          </div>
+          <div class="alright">
+          </div>
+        </div>
+        <div class="main">
+        </div>
   </div>-->
-<%= page_entries_info @quotes %>
-<%= will_paginate @quotes %>
   <% @quotes.each do |quote| %>
+    
     <div class="quote">
       <div class="header">
         <div class="alleft">
@@ -43,5 +40,9 @@
   <div class="box">
     <%= render 'form' %>
   </div>
+
+    <%= page_entries_info @quotes %>
+  <%= will_paginate @quotes %>
+
 </div>
 <br />
