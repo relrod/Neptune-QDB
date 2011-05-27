@@ -5,7 +5,8 @@ class QuotesController < ApplicationController
   # GET /quotes.xml
   def index
     @quote = Quote.new
-    @quotes = Quote.paginate :page => params[:page], :include => :votes, :order => 'created_at DESC'
+    # @quotes = Quote.paginate :page => params[:page], :include => :votes, :order => 'created_at DESC'
+    @quotes = Quote.order('created_at DESC').page(params[:page]).per(10)
     
     respond_to do |format|
       format.html # index.html.erb

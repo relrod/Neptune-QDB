@@ -9,8 +9,22 @@
         <div class="main">
         </div>
   </div>-->
+
+<script>
+  $(document).ready(function(){
+    $(".foobar").hide();
+    $("a.haithar").click(function ( event ) {
+      event.preventDefault();
+      $(this).hide();
+      $(".foobar").show();
+    });
+  });
+</script>
+
+<!--<a href='#' class='haithar'>New Quote (will eventually place a quote box here)</a>
+<div class="foobar" style="background-color: red; height: 20px; width: 20px;">hi</div>-->
   <% @quotes.each do |quote| %>
-    
+
     <div class="quote">
       <div class="header">
         <div class="alleft">
@@ -40,8 +54,7 @@
   <div class="box">
     <%= render 'form' %>
   </div>
-
-    <%= page_entries_info @quotes %>
-  <%= will_paginate @quotes %>
 -->
+  <%= paginate @quotes %>
+
 </div>
